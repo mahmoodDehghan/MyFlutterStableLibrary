@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 
-import './app.dart';
+import './samples/signupapp.dart';
+//import './app.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(SignUpApp());
 }
 
 

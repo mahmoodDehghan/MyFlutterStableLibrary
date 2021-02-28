@@ -6,28 +6,29 @@ class AppTheme extends StatelessWidget {
   static const String defFontFamily = 'Roboto';
   static const String defkey = 'DefaultTheme';
 
-  final Widget themeChild;
+  final Widget? themeChild;
   final ThemeData _themeData;
-  final String themeKey;
+  final String? themeKey;
 
   ThemeData get themeData {
     return _themeData;
   }
 
   AppTheme(
-      {ThemeData themeData,
+      {ThemeData? themeData,
       this.themeKey,
       this.themeChild,
-      MaterialColor primarySwatch,
-      MaterialColor accentColor,
-      String defaultFont})
+      MaterialColor primarySwatch=defPrimarySwatch,
+      MaterialColor accentColor=defAccentColor,
+      String? defaultFont=defFontFamily })
       : _themeData = themeData ??
             ThemeData(
               colorScheme: ColorScheme.fromSwatch(
-                primarySwatch: primarySwatch ?? defPrimarySwatch,
+                primarySwatch: primarySwatch,
               ),
-              accentColor: accentColor ?? defAccentColor,
-              fontFamily: defaultFont ?? defFontFamily,
+              primaryColor: primarySwatch,
+              accentColor: accentColor,
+              fontFamily: defaultFont,
               textTheme: TextTheme(
                 headline1: TextStyle(
                   fontSize: 60,
