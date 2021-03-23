@@ -11,9 +11,22 @@ class SimpleSignUpForm extends StatefulWidget {
 }
 
 class _SimpleSignUpFormState extends State<SimpleSignUpForm> {
+  
+  final GlobalKey formKey = GlobalKey(); 
+  
+  void submitForm() {
+
+  }
+
+  void goToSignIn() {
+
+  }
+
   @override
   Widget build(BuildContext context) {
     return Form(
+      key: formKey,
+
       child: ListView(
         children: [
           UserNameFormField(
@@ -30,11 +43,11 @@ class _SimpleSignUpFormState extends State<SimpleSignUpForm> {
           FormButtonBar(children: [
             SimpleButton(
               label: 'SignIn',
-              onPressed: () {},
+              onPressed: goToSignIn,
             ),
             SimpleButton(
               label: 'SignUp',
-              onPressed: () {},
+              onPressed: submitForm,
             )
           ])
         ],
